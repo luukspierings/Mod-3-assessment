@@ -10,26 +10,21 @@ namespace Mod_3_assessment.Domain
     {
 
 
-        private BaseField _origin;
+        private Road _origin;
+        private char _minename;
 
-        public Mine(BaseField origin)
+        public Mine(Road origin, char minename)
         {
 
             _origin = origin;
-
-
-
-
-
+            _minename = minename;
         }
 
 
+        public String ToChar()
+        {
+            return "[" + _minename + "]";
 
-
-
-
-
-
-
+        }
     }
 }

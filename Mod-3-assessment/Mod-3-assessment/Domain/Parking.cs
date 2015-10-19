@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace Mod_3_assessment.Domain
 {
-    class Parking
+    class Parking: Road
     {
+
+
+
+
+
+
+
+
+
     }
 }

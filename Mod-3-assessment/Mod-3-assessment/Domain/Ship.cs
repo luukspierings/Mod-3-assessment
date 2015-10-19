@@ -8,5 +8,20 @@ namespace Mod_3_assessment.Domain
 {
     class Ship
     {
+        private int score;
+        private Road _dock;
+
+
+        public Road Dock
+        {
+            get { return _dock; }
+            set { _dock = value; }
+        }
+
+
+
+
+
+
     }
 }

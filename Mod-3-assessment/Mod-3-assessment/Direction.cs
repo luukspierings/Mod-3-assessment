@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mod_3_assessment.Domain
+namespace Mod_3_assessment
 {
-    class Switch
+    public enum Direction
     {
+        Right,
+        Down,
+        Up
     }
 }

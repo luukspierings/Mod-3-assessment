@@ -6,11 +6,25 @@ using System.Threading.Tasks;
 
 namespace Mod_3_assessment.Domain
 {
-    class Road: BaseField
+    class Road
     {
+        protected Direction _direction;
+        protected Cart _currentcart;
+        protected Road _next;
 
 
-        private Road _next;
+        public Direction Direction
+        {
+            get { return _direction; }
+            set { _direction = value; }
+        }
+
+        public Cart Currentcart
+        {
+            get { return _currentcart; }
+            set { _currentcart = value; }
+        }
+
 
         public Road Next
         {
@@ -18,11 +32,21 @@ namespace Mod_3_assessment.Domain
             set { _next = value; }
         }
 
-        public void ToChar()
+        public char ToChar()
         {
 
-            Console.WriteLine("_");
-
+            if (Direction == Direction.Up)
+            {
+                return '/';
+            }
+            else if (Direction == Direction.Down)
+            {
+                return '\\';
+            }
+            else
+            {
+                return '_';
+            }
 
         }
 
