@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Mod_3_assessment.Domain;
+using Mod_3_assessment.Presentation;
+using Mod_3_assessment.Process;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +25,13 @@ namespace Mod_3_assessment
 
 
 
-            
+            Controller controller = new Controller();
+            InputView inputview = new InputView();
+            Map map = new Map();
+
+
+
+
 
         }
     }
