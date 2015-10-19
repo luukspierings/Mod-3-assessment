@@ -14,13 +14,12 @@ namespace Mod_3_assessment
         static void Main(string[] args)
         {
 
-            while (!Console.KeyAvailable)
-            {
-                Console.Beep(3200,100);
-            }
+            //while (!Console.KeyAvailable)
+            //{
+            //    Console.Beep(3200,100);
+            //}
 
-            Controller controller = new Controller();
-            InputView inputview = new InputView();
+            
             Map map = new Map();
         }
     }

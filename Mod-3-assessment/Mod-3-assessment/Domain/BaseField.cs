@@ -8,5 +8,18 @@ namespace Mod_3_assessment.Domain
 {
     class BaseField
     {
+
+        private BaseField _next;
+
+        public BaseField Next
+        {
+            get { return _next; }
+            set { _next = value; }
+        }
+
+
+
+
+
     }
 }

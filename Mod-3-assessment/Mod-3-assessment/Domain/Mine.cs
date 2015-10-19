@@ -8,5 +8,28 @@ namespace Mod_3_assessment.Domain
 {
     class Mine
     {
+
+
+        private BaseField _origin;
+
+        public Mine(BaseField origin)
+        {
+
+            _origin = origin;
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
     }
 }
