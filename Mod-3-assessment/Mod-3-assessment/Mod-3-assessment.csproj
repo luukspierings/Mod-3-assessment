@@ -41,8 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\BaseField.cs" />
+    <Compile Include="Domain\Cart.cs" />
     <Compile Include="Domain\Map.cs" />
+    <Compile Include="Domain\Mine.cs" />
+    <Compile Include="Domain\Parking.cs" />
+    <Compile Include="Domain\Road.cs" />
+    <Compile Include="Domain\Ship.cs" />
+    <Compile Include="Domain\Switch.cs" />
     <Compile Include="Presentation\InputView.cs" />
+    <Compile Include="Presentation\OutputView.cs" />
     <Compile Include="Process\Controller.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
