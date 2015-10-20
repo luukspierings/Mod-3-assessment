@@ -19,8 +19,6 @@ namespace Mod_3_assessment.Process
         {
             _inputview = new InputView();
             _outputview = new OutputView();
-
-
             _map = new Map();
 
 

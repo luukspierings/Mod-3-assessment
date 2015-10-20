@@ -125,7 +125,11 @@ namespace Mod_3_assessment.Domain
         }
 
 
-
+        public Ship Ship
+        {
+            get { return _ship; }
+            set { _ship = value; }
+        }
 
 
 

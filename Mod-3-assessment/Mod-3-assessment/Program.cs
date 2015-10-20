@@ -19,8 +19,8 @@ namespace Mod_3_assessment
             //    Console.Beep(3200,100);
             //}
 
-            
-            Map map = new Map();
+
+            Controller controller = new Controller();
         }
     }
 }

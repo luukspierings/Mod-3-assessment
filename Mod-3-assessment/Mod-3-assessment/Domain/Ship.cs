@@ -8,7 +8,7 @@ namespace Mod_3_assessment.Domain
 {
     class Ship
     {
-        private int score;
+        private int cargo;
         private Road _dock;
 
 
@@ -19,7 +19,27 @@ namespace Mod_3_assessment.Domain
         }
 
 
+        public String ToChar()
+        {
+            String cargostring = "";
 
+            for (int i = 0; i < cargo; i++)
+            {
+                cargostring = cargostring + "¦";
+
+
+            }
+            for (int i = 0; i < 8-cargo; i++)
+            {
+                cargostring = cargostring + " ";
+
+
+            }
+
+            return cargostring;
+
+
+        }
 
 
 
