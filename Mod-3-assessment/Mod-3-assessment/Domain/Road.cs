@@ -12,6 +12,12 @@ namespace Mod_3_assessment.Domain
         protected Cart _currentcart;
         protected Road _next;
 
+        public Road(){
+
+            _direction = Direction.Right;
+        
+        }
+
 
         public Direction Direction
         {

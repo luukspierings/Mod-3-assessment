@@ -26,5 +26,12 @@ namespace Mod_3_assessment.Domain
             return "[" + _minename + "]";
 
         }
+
+        public Road Origin
+        {
+            get { return _origin; }
+            set { _origin = value; }
+        }
+
     }
 }

@@ -15,6 +15,7 @@ namespace Mod_3_assessment.Domain
 
         private Ship _ship;
 
+
         public Map()
         {
 
@@ -36,8 +37,11 @@ namespace Mod_3_assessment.Domain
             _mineC = new Mine(originC, 'C');
 
             Road A = buildRoad(2, originA);
+            A.Direction = Direction.Down;
             Road B = buildRoad(2, originB);
+            B.Direction = Direction.Up;
             Road C = buildRoad(5, originC);
+            C.Direction = Direction.Up;
 
 
             SwitchJoin ABjoin = new SwitchJoin();
@@ -57,11 +61,13 @@ namespace Mod_3_assessment.Domain
             ABroad.Next = ABsplit;
 
             ABsplit.RoadUp = new Road();
+            ABsplit.RoadUp.Direction = Direction.Up;
             A = buildRoad(4, ABsplit.RoadUp);
 
             ABsplit.RoadDown = new Road();
+            ABsplit.RoadDown.Direction = Direction.Down;
             B = buildRoad(1, ABsplit.RoadDown);
-
+            B.Direction = Direction.Down;
 
             SwitchJoin BCjoin = new SwitchJoin();
             BCjoin.Direction = Direction.Down;
@@ -79,9 +85,13 @@ namespace Mod_3_assessment.Domain
             BCroad.Next = BCsplit;
 
             BCsplit.RoadUp = new Road();
+            BCsplit.RoadUp.Direction = Direction.Up;
             B = buildRoad(1, BCsplit.RoadUp);
+            B.Direction = Direction.Up;
+
 
             BCsplit.RoadDown = new Road();
+            BCsplit.RoadDown.Direction = Direction.Down;
             C = buildRoad(6, BCsplit.RoadDown);
 
 
@@ -130,7 +140,21 @@ namespace Mod_3_assessment.Domain
             get { return _ship; }
             set { _ship = value; }
         }
-
+        public Mine MineA
+        {
+            get { return _mineA; }
+            set { _mineA = value; }
+        }
+        public Mine MineB
+        {
+            get { return _mineB; }
+            set { _mineB = value; }
+        }
+        public Mine MineC
+        {
+            get { return _mineC; }
+            set { _mineC = value; }
+        }
 
 
     }
