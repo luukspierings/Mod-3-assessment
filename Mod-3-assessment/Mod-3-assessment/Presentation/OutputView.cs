@@ -20,77 +20,207 @@ namespace Mod_3_assessment.Presentation
         public void drawMap(Map map)
         {
 
-            String[] maparray = new String[10];
+            Console.Clear();
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~ +----------+ ~~~~");
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~ <¦" + map.Ship.ToChar() + "  ¦> ~~~");
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~ +----------+ ~~~~");
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~███~~~~~~~~~~");
+            Console.WriteLine("                                        ");
+            
+
+            String[] maparray = new String[5];
 
             int rowmineA = 0;
-            int rowmineB = 4;
-            int rowmineC = 6;
+            int rowmineB = 2;
+            int rowmineC = 4;
 
             Road roadA = map.MineA.Origin;
             Road roadB = map.MineB.Origin;
             Road roadC = map.MineC.Origin;
 
-            SwitchJoin ABjoin;
-            SwitchSplit ABsplit;
-            SwitchJoin BCjoin;
-            SwitchSplit BCsplit;
             
+            maparray[rowmineA] = maparray[rowmineA] + map.MineA.ToChar();
+            maparray[rowmineB] = maparray[rowmineB] + map.MineB.ToChar();
+            maparray[rowmineC] = maparray[rowmineC] + map.MineC.ToChar();
 
-            for (int i = 0; i < 30; i++)
+
+            for (int s = 0; s < maparray.Length; s++)
+            {
+                if (s != rowmineA && s != rowmineB && s != rowmineC)
+                {
+                    maparray[s] = maparray[s] + "   ";
+                }
+            }
+
+            for (int i = 0; i < maparray.Length; i++)
             {
 
 
-                maparray[rowmineA] = maparray[rowmineA] + roadA.ToChar();
-                maparray[rowmineB] = maparray[rowmineB] + roadB.ToChar();
-                maparray[rowmineC] = maparray[rowmineC] + roadC.ToChar();
+                roadA = map.MineA.Origin;
+                roadB = map.MineB.Origin;
+                roadC = map.MineC.Origin;
+
+                rowmineA = 0;
+                rowmineB = 2;
+                rowmineC = 4;
+
+                Boolean secondswitchB = false;
+
+
+                
+                    while (roadA != null)
+                    {
+                        if (rowmineA == i && roadA.GetType() == new Road().GetType())
+                        {
+
+                            maparray[i] = maparray[i] + roadA.ToChar();
+
+
+                        }
+                        else if (i < 2 && roadA.GetType() == new Road().GetType())
+                        {
+                            maparray[i] = maparray[i] + "-";
+                        }
+
+                        if (roadA.Direction == Direction.Up && roadA.GetType() == new Road().GetType())
+                        {
+                            rowmineA--;
+                        }
+
+                        if (roadA.Direction == Direction.Down && roadA.GetType() == new Road().GetType())
+                        {
+                            rowmineA++;
+                            
+                        }
+
+
+                        if (roadA.GetType() == new SwitchSplit().GetType())
+                        {
+                            SwitchSplit temp = (SwitchSplit)roadA;
+                            roadA = temp.RoadUp;
+                            rowmineA--;
+                            
+                        }
+                        else
+                        {
+                            roadA = roadA.Next;
+                        }
+                    }
+                    
+                
+
+                for (int b = 0; b < 13 && roadB != null; b++)
+                {
+                        if (rowmineB == i && roadB.GetType() == new Road().GetType())
+                        {
+                            if (rowmineB == 2)
+                            {
+                                maparray[i] = maparray[i] + roadB.ToChar();
+                            }
+                            
+                         
+                        }
+                        else if (i == 2 && roadB.GetType() == new Road().GetType())
+                        {
+                            maparray[i] = maparray[i] + "-";
+                        }
+
+                        if (roadB.Direction == Direction.Up && roadB.GetType() == new Road().GetType())
+                        {
+                            rowmineB--;
+                        }
+
+                        if (roadB.Direction == Direction.Down && roadB.GetType() == new Road().GetType())
+                        {
+                            rowmineB++;
+                            Console.WriteLine(rowmineB);
+                        }
+
+
+                        if (roadB.GetType() == new SwitchSplit().GetType())
+                        {
+                            SwitchSplit temp = (SwitchSplit)roadB;
+                            if (!secondswitchB)
+                            {
+                                roadB = temp.RoadDown;
+                                secondswitchB = !secondswitchB;
+                                rowmineB++;
+                                
+                            }
+                            else
+                            {
+                                roadB = temp.RoadUp;
+                                
+                                rowmineB--;
+                            }
+                            
+                            
+                            
+                        }
+                        else
+                        {
+                            roadB = roadB.Next;
+                        }
+                }
+
+                
+
+
+
+                
+                    while (roadC != null)
+                    {
+                        if (rowmineC == i && roadC.GetType() == new Road().GetType())
+                        {
+
+                            maparray[i] = maparray[i] + roadC.ToChar();
+
+
+                        }
+
+                        if (roadC.Direction == Direction.Up && roadC.GetType() == new Road().GetType())
+                        {
+                            rowmineC--;
+                        }
+
+                        if (roadC.Direction == Direction.Down && roadC.GetType() == new Road().GetType())
+                        {
+                            rowmineC++;
+                            
+                        }
+
+
+                        if (roadC.GetType() == new SwitchSplit().GetType())
+                        {
+                            SwitchSplit temp = (SwitchSplit)roadC;
+                            roadC = temp.RoadDown;
+                            rowmineC++;
+
+                        }
+                        else
+                        {
+                            roadC = roadC.Next;
+                        }
+                    }
+
+                
 
 
 
 
 
 
-
-
-
-
-                roadA = roadA.Next;
-                roadB = roadB.Next;
-                roadC = roadC.Next;
 
             }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                Console.Clear();
-            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~ +----------+ ~~~~");
-            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~ <¦"+  map.Ship.ToChar() + "¦> ~~~");
-            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~ +----------+ ~~~~");
-            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~███~~~~~~~~~~");
-            Console.WriteLine("                                        ");
-            Console.WriteLine(map.MineA.ToChar() + "");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-
-
-
-
-
-
+            Console.Clear();
+            Console.WriteLine(maparray[0]);
+            Console.WriteLine(maparray[1]);
+            Console.WriteLine(maparray[2]);
+            Console.WriteLine(maparray[3]);
+            Console.WriteLine(maparray[4]);
 
         }
 
@@ -115,7 +245,7 @@ namespace Mod_3_assessment.Presentation
             Console.WriteLine("> press key to start");
             input = Console.ReadKey();
 
-
+            
 
 
 

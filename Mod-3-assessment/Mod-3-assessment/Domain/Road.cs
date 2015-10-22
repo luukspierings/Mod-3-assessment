@@ -11,6 +11,7 @@ namespace Mod_3_assessment.Domain
         protected Direction _direction;
         protected Cart _currentcart;
         protected Road _next;
+        protected Road _previous;
 
         public Road(){
 
@@ -38,20 +39,37 @@ namespace Mod_3_assessment.Domain
             set { _next = value; }
         }
 
-        public char ToChar()
+        public Road Previous
         {
+            get { return _previous; }
+            set { _previous = value; }
+        }
 
-            if (Direction == Direction.Up)
+        public String ToChar()
+        {
+            if (Previous == null)
             {
-                return '/';
+                return "═";
             }
-            else if (Direction == Direction.Down)
+
+            if (Direction == Direction.Up && Previous.Direction == Direction.Right)
             {
-                return '\\';
+                return "╝";
+            }
+            else if (Direction == Direction.Down && Previous.Direction == Direction.Right)
+            {
+                return "╗";
+            }
+            else if(Direction == Direction.Right && Previous.Direction == Direction.Down){
+                return "╚";
+            }
+            else if(Direction == Direction.Right && Previous.Direction == Direction.Up)
+            {
+                return "╔";
             }
             else
             {
-                return '_';
+                return "═";
             }
 
         }

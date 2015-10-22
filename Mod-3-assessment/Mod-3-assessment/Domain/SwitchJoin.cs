@@ -28,7 +28,7 @@ namespace Mod_3_assessment.Domain
             set { _previousdown = value; }
         }
 
-
+       
 
 
     }

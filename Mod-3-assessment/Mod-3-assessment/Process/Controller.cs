@@ -17,10 +17,12 @@ namespace Mod_3_assessment.Process
 
         public Controller()
         {
+            _map = new Map();
             _inputview = new InputView();
             _outputview = new OutputView();
-            _map = new Map();
+            _outputview.drawMap(_map);
 
+            Console.ReadLine();
 
 
 

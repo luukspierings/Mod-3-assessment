@@ -46,7 +46,7 @@ namespace Mod_3_assessment.Domain
 
             SwitchJoin ABjoin = new SwitchJoin();
 
-            ABjoin.Direction = Direction.Down;
+            //ABjoin.Direction = Direction.Down;
             A.Next = ABjoin;
             B.Next = ABjoin;
             ABjoin.PreviousUp = A;
@@ -54,23 +54,28 @@ namespace Mod_3_assessment.Domain
 
             Road ABroad = new Road();
             ABjoin.Next = ABroad;
+            ABroad.Previous = ABjoin;
 
             SwitchSplit ABsplit = new SwitchSplit();
 
             ABsplit.Direction = Direction.Up;
             ABroad.Next = ABsplit;
+            ABsplit.Previous = ABroad;
 
             ABsplit.RoadUp = new Road();
-            ABsplit.RoadUp.Direction = Direction.Up;
+            ABsplit.RoadUp.Previous = ABsplit;
+            
             A = buildRoad(4, ABsplit.RoadUp);
+            A.Direction = Direction.Down;
 
             ABsplit.RoadDown = new Road();
-            ABsplit.RoadDown.Direction = Direction.Down;
+            ABsplit.RoadDown.Previous = ABsplit;
+            
             B = buildRoad(1, ABsplit.RoadDown);
             B.Direction = Direction.Down;
 
             SwitchJoin BCjoin = new SwitchJoin();
-            BCjoin.Direction = Direction.Down;
+            //BCjoin.Direction = Direction.Down;
             B.Next = BCjoin;
             C.Next = BCjoin;
             BCjoin.PreviousUp = B;
@@ -78,26 +83,30 @@ namespace Mod_3_assessment.Domain
 
             Road BCroad = new Road();
             BCjoin.Next = BCroad;
+            BCroad.Previous = BCjoin;
 
             SwitchSplit BCsplit = new SwitchSplit();
             BCsplit.Direction = Direction.Up;
 
             BCroad.Next = BCsplit;
+            BCsplit.Previous = BCroad;
 
             BCsplit.RoadUp = new Road();
-            BCsplit.RoadUp.Direction = Direction.Up;
+            BCsplit.RoadUp.Previous = BCsplit;
+            
             B = buildRoad(1, BCsplit.RoadUp);
             B.Direction = Direction.Up;
 
 
             BCsplit.RoadDown = new Road();
-            BCsplit.RoadDown.Direction = Direction.Down;
+            BCsplit.RoadDown.Previous = BCsplit;
+            
             C = buildRoad(6, BCsplit.RoadDown);
 
 
 
             ABjoin = new SwitchJoin();
-            ABjoin.Direction = Direction.Down;
+            //ABjoin.Direction = Direction.Down;
             A.Next = ABjoin;
             B.Next = ABjoin;
             ABjoin.PreviousUp = A;
@@ -105,6 +114,7 @@ namespace Mod_3_assessment.Domain
 
             ABroad = new Road();
             ABjoin.Next = ABroad;
+            ABroad.Previous = ABjoin;
 
             Road dock = buildRoad(6, ABroad);
             _ship.Dock = dock;
@@ -120,11 +130,13 @@ namespace Mod_3_assessment.Domain
 
             Road last = new Road();
             begin.Next = last;
+            last.Previous = begin;
 
             for (int i = 1; i < howmuch; i++)
             {
                 Road temp = new Road();
                 last.Next = temp;
+                temp.Previous = last;
                 last = temp;
             }
 
