@@ -17,6 +17,7 @@ namespace Mod_3_assessment.Process
         private InputView _inputview;
         private OutputView _outputview;
         private Map _map;
+        private Thread thread;
 
         public Boolean GameFinished { get; set; }
 
@@ -33,23 +34,17 @@ namespace Mod_3_assessment.Process
             GameFinished = false;
 
             _map.MineA.placeCart();
-            _map.MineB.placeCart();
-            _map.MineC.placeCart();
+            //_map.MineB.placeCart();
+            //_map.MineC.placeCart();
 
 
             this.Start();
-
-
-            Console.ReadLine();
-            
-
-
         }
 
         public void Start()
         {
 
-            Thread thread = new Thread(new ThreadStart(this.Update));
+            thread = new Thread(new ThreadStart(this.Update));
             thread.Start();
 
         }
@@ -62,11 +57,21 @@ namespace Mod_3_assessment.Process
             {
 
                 long ts = stopwatch.ElapsedMilliseconds;
+                
+                int inputnumber = _inputview.GetInput();
 
-                _inputview.input();
-
-                if (stopwatch.ElapsedMilliseconds >= this.timeSpan)
+                if(inputnumber != 0)
                 {
+                    _map.changeSwitch(inputnumber);
+                    _outputview.drawMap(_map);
+                    inputnumber = 0;
+                }
+                
+
+
+                if (ts >= this.timeSpan)
+                {
+                   
                     _outputview.drawMap(_map);
                     this.render();
                     
@@ -365,8 +370,7 @@ namespace Mod_3_assessment.Process
                 c.Moved = false;
             }
 
-                Console.WriteLine("update finished");
-
+                
 
         }
 

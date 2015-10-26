@@ -15,7 +15,6 @@ namespace Mod_3_assessment.Domain
 
         private Ship _ship;
 
-
         public Map()
         {
 
@@ -147,6 +146,79 @@ namespace Mod_3_assessment.Domain
 
 
         }
+
+        public void changeSwitch(int switchnumber)
+        {
+
+            if (switchnumber == 1)
+            {
+                changeSwitchJoin(_mineA.Origin);
+            }
+            else if (switchnumber == 2)
+            {
+                changeSwitchSplit(_mineA.Origin);              
+            }
+            else if (switchnumber == 3)
+            {
+                changeSwitchJoin(_mineC.Origin);
+            }
+            else if (switchnumber == 4)
+            {
+                changeSwitchSplit(_mineC.Origin);
+            }
+            else if (switchnumber == 5)
+            {
+                Road temp = _mineA.Origin;
+
+                while (temp.Next.GetType() != new SwitchSplit().GetType())
+                {
+                    temp = temp.Next;
+                }
+
+                changeSwitchJoin(((SwitchSplit)temp.Next).RoadUp);
+
+            }
+            
+        }
+
+        public void changeSwitchSplit(Road road)
+        {
+            while (road.Next.GetType() != new SwitchSplit().GetType())
+            {
+                road = road.Next;
+            }
+
+            SwitchSplit tempSwitch = (SwitchSplit)road.Next;
+
+            if (tempSwitch.Direction == Direction.Up && road.Next.Currentcart == null)
+            {
+                tempSwitch.Direction = Direction.Down;
+            }
+            else if (road.Next.Currentcart == null)
+            {
+                tempSwitch.Direction = Direction.Up;
+            }
+        }
+
+        public void changeSwitchJoin(Road road)
+        {
+            while (road.Next.GetType() != new SwitchJoin().GetType())
+            {
+                road = road.Next;
+            }
+
+            SwitchJoin tempSwitch = (SwitchJoin)road.Next;
+
+            if (tempSwitch.DirectionJoin == Direction.Up && road.Next.Currentcart == null)
+            {
+                tempSwitch.DirectionJoin = Direction.Down;
+            }
+            else if (road.Next.Currentcart == null)
+            {
+                tempSwitch.DirectionJoin = Direction.Up;
+            }
+        }
+
 
 
         public Ship Ship
