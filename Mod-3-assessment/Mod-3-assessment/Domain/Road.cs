@@ -88,21 +88,24 @@ namespace Mod_3_assessment.Domain
 
         }
 
-        public void renderCart()
+        public Boolean renderCart()
         {
             
-            if (Next != null && Next.Currentcart == null)
+            if (Next != null && Currentcart != null && Next.Currentcart == null && !Currentcart.Moved)
             {
                 Next.Currentcart = Currentcart;
+                Currentcart.Moved = true;
                 Currentcart = null;
+                
 
-
+                return true;
                 
 
             }
             else
             {
-                
+                return false;
+
             }
 
 

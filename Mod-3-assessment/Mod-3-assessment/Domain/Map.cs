@@ -46,7 +46,7 @@ namespace Mod_3_assessment.Domain
 
             SwitchJoin ABjoin = new SwitchJoin();
 
-            ABjoin.DirectionJoin = Direction.Up;
+            ABjoin.DirectionJoin = Direction.Down;
             A.Next = ABjoin;
             B.Next = ABjoin;
             ABjoin.PreviousUp = A;
@@ -86,7 +86,7 @@ namespace Mod_3_assessment.Domain
             BCroad.Previous = BCjoin;
 
             SwitchSplit BCsplit = new SwitchSplit();
-            BCsplit.Direction = Direction.Up;
+            BCsplit.Direction = Direction.Down;
 
             BCroad.Next = BCsplit;
             BCsplit.Previous = BCroad;

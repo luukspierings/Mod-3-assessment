@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Direction.cs" />
+    <Compile Include="Domain\Direction.cs" />
     <Compile Include="Domain\Cart.cs" />
     <Compile Include="Domain\Map.cs" />
     <Compile Include="Domain\Mine.cs" />
@@ -52,7 +52,7 @@
     <Compile Include="Presentation\InputView.cs" />
     <Compile Include="Presentation\OutputView.cs" />
     <Compile Include="Process\Controller.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Process\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Domain\SwitchSplit.cs" />
   </ItemGroup>

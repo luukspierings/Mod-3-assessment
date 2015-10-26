@@ -26,31 +26,35 @@ namespace Mod_3_assessment
         }
 
 
-        public void renderCart()
+        public Boolean renderCart()
         {
 
 
-            if (Direction == Direction.Up && RoadUp.Currentcart == null)
+            if (Currentcart != null && Direction == Direction.Up && RoadUp.Currentcart == null && !Currentcart.Moved)
             {
+                Currentcart.Moved = true;
                 RoadUp.Currentcart = Currentcart;
+                
                 Currentcart = null;
 
-
+                return true;
                 
 
             }
-            else if(Direction == Direction.Down && RoadDown.Currentcart == null)
+            else if (Currentcart != null && Direction == Direction.Down && RoadDown.Currentcart == null && !Currentcart.Moved)
             {
+                Currentcart.Moved = true;
                 RoadDown.Currentcart = Currentcart;
+                
                 Currentcart = null;
 
-                
 
+                return true;
 
             }
             else
             {
-                
+                return false;
             }
 
 

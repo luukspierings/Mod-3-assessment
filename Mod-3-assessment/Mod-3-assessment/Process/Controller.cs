@@ -21,7 +21,7 @@ namespace Mod_3_assessment.Process
         public Boolean GameFinished { get; set; }
 
 
-        private int timeSpan = 2000;
+        private int timeSpan = 1000;
 
         public Controller()
         {
@@ -32,9 +32,9 @@ namespace Mod_3_assessment.Process
             _outputview.drawMap(_map);
             GameFinished = false;
 
-
             _map.MineA.placeCart();
-
+            _map.MineB.placeCart();
+            _map.MineC.placeCart();
 
 
             this.Start();
@@ -63,6 +63,7 @@ namespace Mod_3_assessment.Process
 
                 long ts = stopwatch.ElapsedMilliseconds;
 
+                _inputview.input();
 
                 if (stopwatch.ElapsedMilliseconds >= this.timeSpan)
                 {
@@ -86,11 +87,94 @@ namespace Mod_3_assessment.Process
 
             Road roadlast = new Road();
 
-
-            int currentline = 0;
             Boolean godown = true;
 
+            List<Cart> carts = new List<Cart>();
 
+
+            Cart tempcart;
+
+
+            // C
+
+            while (roadC != null)
+            {
+                if (roadC.GetType() == new SwitchSplit().GetType())
+                {
+                    SwitchSplit temp = (SwitchSplit)roadC;
+                    roadlast = roadC;
+                    roadC = temp.RoadDown;
+
+
+                }
+                else
+                {
+                    roadlast = roadC;
+                    roadC = roadC.Next;
+                }
+
+            }
+
+            if (roadlast.Currentcart != null)
+            {
+                roadlast.Currentcart = null;
+            }
+
+            while (roadlast != null)
+            {
+
+                if (roadlast.GetType() == new SwitchSplit().GetType())
+                {
+                    SwitchSplit temp = (SwitchSplit)roadlast;
+                    tempcart = roadlast.Currentcart;
+
+                    if (temp.renderCart())
+                    {
+
+                        carts.Add(tempcart);
+                    }
+
+
+                }
+                else if (roadlast.Next != null && roadlast.Next.GetType() == new SwitchJoin().GetType())
+                {
+                    SwitchJoin temp = (SwitchJoin)roadlast.Next;
+                    if (temp.DirectionJoin == Direction.Down)
+                    {
+                        tempcart = roadlast.Currentcart;
+                        if (roadlast.renderCart())
+                        {
+                            carts.Add(tempcart);
+                        }
+                    }
+
+
+                }
+                else
+                {
+                    tempcart = roadlast.Currentcart;
+                    if (roadlast.renderCart())
+                    {
+                        carts.Add(tempcart);
+                    }
+                }
+
+
+                if (roadlast.GetType() == new SwitchJoin().GetType())
+                {
+                    SwitchJoin temp = (SwitchJoin)roadlast;
+                    roadlast = temp.PreviousDown;
+
+
+                }
+                else
+                {
+                    roadlast = roadlast.Previous;
+                }
+
+            }
+
+            // B
 
             while (roadB != null)
             {
@@ -110,51 +194,54 @@ namespace Mod_3_assessment.Process
 
             }
 
-            if (roadlast.Currentcart != null)
-            {
-                roadlast.Currentcart = null;
-            }
+            
 
 
             while (roadlast != null)
             {
-                if (roadlast.Direction == Direction.Up)
-                {
-                    currentline++;
-                }
-
-                if (roadlast.Direction == Direction.Down)
-                {
-                    currentline--;
-
-                }
-                Console.Write(currentline);
-                if (currentline >= 2 && roadlast.GetType() == new SwitchSplit().GetType())
+                if ( roadlast.GetType() == new SwitchSplit().GetType())
                 {
                     SwitchSplit temp = (SwitchSplit)roadlast;
-                    temp.renderCart();
+
+                    tempcart = roadlast.Currentcart;
+                    if (temp.renderCart())
+                    {
+                        carts.Add(tempcart);
+                    }
 
 
 
                 }
-                else if (currentline >= 2 && roadlast.Next != null && roadlast.Next.GetType() == new SwitchJoin().GetType())
+                else if (roadlast.Next != null && roadlast.Next.GetType() == new SwitchJoin().GetType())
                 {
                     SwitchJoin temp = (SwitchJoin)roadlast.Next;
                     if (godown && temp.DirectionJoin == Direction.Up)
                     {
-                        roadlast.renderCart();
+                        tempcart = roadlast.Currentcart;
+                        if (roadlast.renderCart())
+                        {
+                            carts.Add(tempcart);
+                        }
 
                     }
                     else if (!godown && temp.DirectionJoin == Direction.Down)
                     {
-                        roadlast.renderCart();
+                        tempcart = roadlast.Currentcart;
+                        if (roadlast.renderCart())
+                        {
+                            carts.Add(tempcart);
+                        }
 
                     }
 
                 }
-                else if (currentline >= 2)
+                else
                 {
-                    roadlast.renderCart();
+                    tempcart = roadlast.Currentcart;
+                        if (roadlast.renderCart())
+                        {
+                            carts.Add(tempcart);
+                        }
                 }
 
 
@@ -186,7 +273,7 @@ namespace Mod_3_assessment.Process
 
 
             
-
+            // A
 
 
             while (roadA != null)
@@ -218,7 +305,13 @@ namespace Mod_3_assessment.Process
                 if (roadlast.GetType() == new SwitchSplit().GetType())
                 {
                     SwitchSplit temp = (SwitchSplit)roadlast;
-                    temp.renderCart();
+                    tempcart = roadlast.Currentcart;
+                    
+                    if (temp.renderCart())
+                    {
+                        
+                        carts.Add(tempcart);
+                    }
                     
 
                 }
@@ -227,14 +320,22 @@ namespace Mod_3_assessment.Process
                     SwitchJoin temp = (SwitchJoin)roadlast.Next;
                     if (temp.DirectionJoin == Direction.Up)
                     {
-                        roadlast.renderCart();
+                        tempcart = roadlast.Currentcart;
+                        if (roadlast.renderCart())
+                        {
+                            carts.Add(tempcart);
+                        }
                     }
 
 
                 }
                 else
                 {
-                    roadlast.renderCart();
+                    tempcart = roadlast.Currentcart;
+                    if (roadlast.renderCart())
+                    {
+                        carts.Add(tempcart);
+                    }
                 }
 
 
@@ -254,14 +355,17 @@ namespace Mod_3_assessment.Process
 
 
 
-            
 
-           
 
-            
 
-            
-            Console.WriteLine("update finished");
+
+
+            foreach(Cart c in carts)
+            {
+                c.Moved = false;
+            }
+
+                Console.WriteLine("update finished");
 
 
         }
