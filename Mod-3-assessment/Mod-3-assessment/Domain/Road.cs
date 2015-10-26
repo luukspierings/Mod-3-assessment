@@ -47,9 +47,23 @@ namespace Mod_3_assessment.Domain
 
         public String ToChar()
         {
-            if (Previous == null)
+
+
+            if (Currentcart != null)
+            {
+                return Currentcart.ToChar() + "";
+            }
+            else if (Previous == null)
             {
                 return "═";
+            }
+            else if (Previous.GetType() == new SwitchSplit().GetType() && this == ((SwitchSplit)Previous).RoadDown)
+            {
+                return "╚";
+            }
+            else if (Previous.GetType() == new SwitchSplit().GetType() && this == ((SwitchSplit)Previous).RoadUp)
+            {
+                return "╔";
             }
 
             if (Direction == Direction.Up && Previous.Direction == Direction.Right)
@@ -74,7 +88,28 @@ namespace Mod_3_assessment.Domain
 
         }
 
+        public void renderCart()
+        {
+            
+            if (Next != null && Next.Currentcart == null)
+            {
+                Next.Currentcart = Currentcart;
+                Currentcart = null;
 
+
+                
+
+            }
+            else
+            {
+                
+            }
+
+
+
+
+
+        }
         
 
 

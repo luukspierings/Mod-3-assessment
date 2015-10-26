@@ -21,12 +21,12 @@ namespace Mod_3_assessment.Presentation
         {
 
             Console.Clear();
-            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~ +----------+ ~~~~");
-            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~ <¦" + map.Ship.ToChar() + "  ¦> ~~~");
-            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~ +----------+ ~~~~");
-            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~███~~~~~~~~~~");
-            Console.WriteLine("                                        ");
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            Console.WriteLine("~~~~~~~~~~~~ +----------+ ~~~~");
+            Console.WriteLine("~~~~~~~~~~~ <¦" + map.Ship.ToChar() + "  ¦> ~~~");
+            Console.WriteLine("~~~~~~~~~~~~ +----------+ ~~~~");
+            Console.WriteLine("~~~~~~~~~~~~~~~~~█~~~~~~~~~~~~");
+            
             
 
             String[] maparray = new String[5];
@@ -71,17 +71,30 @@ namespace Mod_3_assessment.Presentation
                 
                     while (roadA != null)
                     {
-                        if (rowmineA == i && roadA.GetType() == new Road().GetType())
+                        if (rowmineA == i)
                         {
+                            if (roadA.GetType() == new SwitchJoin().GetType())
+                            {
+                                maparray[i] = maparray[i] + ((SwitchJoin)roadA).ToChar();
+                            }
+                            else
+                            {
+                                maparray[i] = maparray[i] + roadA.ToChar();
+                            }
 
-                            maparray[i] = maparray[i] + roadA.ToChar();
+                           
 
+
+                        }
+                        else if (roadA.Previous != null && (roadA.Direction == Direction.Up || roadA.Direction == Direction.Down || roadA.Previous.Direction == Direction.Down || roadA.Previous.Direction == Direction.Up))
+                        {
 
                         }
                         else if (i < 2 && roadA.GetType() == new Road().GetType())
                         {
-                            maparray[i] = maparray[i] + "-";
+                            maparray[i] = maparray[i] + " ";
                         }
+
 
                         if (roadA.Direction == Direction.Up && roadA.GetType() == new Road().GetType())
                         {
@@ -123,7 +136,7 @@ namespace Mod_3_assessment.Presentation
                         }
                         else if (i == 2 && roadB.GetType() == new Road().GetType())
                         {
-                            maparray[i] = maparray[i] + "-";
+                            maparray[i] = maparray[i] + " ";
                         }
 
                         if (roadB.Direction == Direction.Up && roadB.GetType() == new Road().GetType())
@@ -134,7 +147,7 @@ namespace Mod_3_assessment.Presentation
                         if (roadB.Direction == Direction.Down && roadB.GetType() == new Road().GetType())
                         {
                             rowmineB++;
-                            Console.WriteLine(rowmineB);
+                            
                         }
 
 
@@ -171,12 +184,27 @@ namespace Mod_3_assessment.Presentation
                 
                     while (roadC != null)
                     {
-                        if (rowmineC == i && roadC.GetType() == new Road().GetType())
+                        if (rowmineC == i)
                         {
 
-                            maparray[i] = maparray[i] + roadC.ToChar();
 
+                            if (roadC.GetType() == new SwitchJoin().GetType())
+                            {
+                                maparray[i] = maparray[i] + ((SwitchJoin)roadC).ToChar();
+                            }
+                            else
+                            {
+                                maparray[i] = maparray[i] + roadC.ToChar();
+                            }
 
+                        }
+                        else if (roadC.Previous != null && (roadC.Direction == Direction.Up || roadC.Direction == Direction.Down || roadC.Previous.Direction == Direction.Down || roadC.Previous.Direction == Direction.Up))
+                        {
+
+                        }
+                        else if (i > 2 && roadC.GetType() == new Road().GetType())
+                        {
+                            maparray[i] = maparray[i] + " ";
                         }
 
                         if (roadC.Direction == Direction.Up && roadC.GetType() == new Road().GetType())
@@ -215,7 +243,7 @@ namespace Mod_3_assessment.Presentation
             }
 
 
-            Console.Clear();
+            
             Console.WriteLine(maparray[0]);
             Console.WriteLine(maparray[1]);
             Console.WriteLine(maparray[2]);

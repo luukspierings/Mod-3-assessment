@@ -26,6 +26,36 @@ namespace Mod_3_assessment
         }
 
 
+        public void renderCart()
+        {
+
+
+            if (Direction == Direction.Up && RoadUp.Currentcart == null)
+            {
+                RoadUp.Currentcart = Currentcart;
+                Currentcart = null;
+
+
+                
+
+            }
+            else if(Direction == Direction.Down && RoadDown.Currentcart == null)
+            {
+                RoadDown.Currentcart = Currentcart;
+                Currentcart = null;
+
+                
+
+
+            }
+            else
+            {
+                
+            }
+
+
+
+        }
 
 
 

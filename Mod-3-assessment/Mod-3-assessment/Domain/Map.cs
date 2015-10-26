@@ -46,7 +46,7 @@ namespace Mod_3_assessment.Domain
 
             SwitchJoin ABjoin = new SwitchJoin();
 
-            //ABjoin.Direction = Direction.Down;
+            ABjoin.DirectionJoin = Direction.Up;
             A.Next = ABjoin;
             B.Next = ABjoin;
             ABjoin.PreviousUp = A;
@@ -58,7 +58,7 @@ namespace Mod_3_assessment.Domain
 
             SwitchSplit ABsplit = new SwitchSplit();
 
-            ABsplit.Direction = Direction.Up;
+            ABsplit.Direction = Direction.Down;
             ABroad.Next = ABsplit;
             ABsplit.Previous = ABroad;
 
@@ -75,7 +75,7 @@ namespace Mod_3_assessment.Domain
             B.Direction = Direction.Down;
 
             SwitchJoin BCjoin = new SwitchJoin();
-            //BCjoin.Direction = Direction.Down;
+            BCjoin.DirectionJoin = Direction.Up;
             B.Next = BCjoin;
             C.Next = BCjoin;
             BCjoin.PreviousUp = B;
@@ -106,7 +106,7 @@ namespace Mod_3_assessment.Domain
 
 
             ABjoin = new SwitchJoin();
-            //ABjoin.Direction = Direction.Down;
+            ABjoin.DirectionJoin = Direction.Down;
             A.Next = ABjoin;
             B.Next = ABjoin;
             ABjoin.PreviousUp = A;
@@ -117,6 +117,8 @@ namespace Mod_3_assessment.Domain
             ABroad.Previous = ABjoin;
 
             Road dock = buildRoad(6, ABroad);
+            dock.Previous.Direction = Direction.Up;
+
             _ship.Dock = dock;
 
             buildRoad(9, dock);

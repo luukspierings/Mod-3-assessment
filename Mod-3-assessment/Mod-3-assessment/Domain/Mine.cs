@@ -33,5 +33,13 @@ namespace Mod_3_assessment.Domain
             set { _origin = value; }
         }
 
+        public void placeCart()
+        {
+
+            Origin.Currentcart = new Cart();
+
+
+        }
+
     }
 }

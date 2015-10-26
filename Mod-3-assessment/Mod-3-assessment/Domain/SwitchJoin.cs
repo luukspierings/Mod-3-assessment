@@ -13,7 +13,7 @@ namespace Mod_3_assessment.Domain
         Road _previousup;
         Road _previousdown;
 
-        
+        Direction _directionJoin;
 
 
         public Road PreviousUp
@@ -28,8 +28,33 @@ namespace Mod_3_assessment.Domain
             set { _previousdown = value; }
         }
 
-       
+        public Direction DirectionJoin
+        {
+            get { return _directionJoin; }
+            set { _directionJoin = value; }
+        }
+
+        public String ToChar()
+        {
+            if (Currentcart != null)
+            {
+                return Currentcart.ToChar() + "";
+            }
+
+            if (DirectionJoin == Direction.Down)
+            {
+                return "╔";
+            }
+            else if (DirectionJoin == Direction.Up)
+            {
+                return "╚";
+            }
+            else
+            {
+                return "=";
+            }
 
 
+        }
     }
 }
