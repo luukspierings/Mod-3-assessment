@@ -17,13 +17,13 @@ namespace Mod_3_assessment.Presentation
         }
 
 
-        public void drawMap(Map map)
+        public void drawMap(Map map, int lvl)
         {
 
             Console.Clear();
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             Console.WriteLine("~~~~~~~~~~~~ +----------+ ~~~~");
-            Console.WriteLine("~~~~~~~~~~~ <¦" + map.Ship.ToChar() + "  ¦> ~~~");
+            Console.WriteLine("~~~~~~~~~~~ <¦ " + map.Ship.ToChar() + " ¦> ~~~");
             Console.WriteLine("~~~~~~~~~~~~ +----------+ ~~~~");
             Console.WriteLine("~~~~~~~~~~~~~~~~~█~~~~~~~~~~~~");
             
@@ -192,6 +192,10 @@ namespace Mod_3_assessment.Presentation
                             {
                                 maparray[i] = maparray[i] + ((SwitchJoin)roadC).ToChar();
                             }
+                            else if (roadC.GetType() == new Parking().GetType())
+                            {
+                                maparray[i] = maparray[i] + ((Parking)roadC).ToChar();
+                            }
                             else
                             {
                                 maparray[i] = maparray[i] + roadC.ToChar();
@@ -250,6 +254,15 @@ namespace Mod_3_assessment.Presentation
             Console.WriteLine(maparray[3]);
             Console.WriteLine(maparray[4]);
 
+
+            Console.WriteLine("┌──────────────────────────────────────────────────────────────────┐");
+            Console.WriteLine(" Switches verander je met toets 1, 2, 3, 4, 5 | Score =  " + map.Score +  " | lvl: " + lvl + "  ");
+            Console.WriteLine("└──────────────────────────────────────────────────────────────────┘");
+
+
+
+
+
         }
 
         public void drawMenu()
@@ -260,12 +273,10 @@ namespace Mod_3_assessment.Presentation
             Console.WriteLine("|                                                      |");
             Console.WriteLine("| betekenis van de symbolen   |   doel van het spel    |");
             Console.WriteLine("|                             |                        |");
-            Console.WriteLine("|      _ : spoor              |  Beweeg de splitsingen |");
-            Console.WriteLine("|   / of \\ : bocht            |  zodat de karretjes    |");
-            Console.WriteLine("|      O : leeg karretje      |  op het schip gelost   |");
-            Console.WriteLine("|      Ø : vol karretje       |  worden                |");
-            Console.WriteLine("|      x : gesloten splitsing |                        |");
-            Console.WriteLine("|      . : rangeerterrein     |                        |");
+            Console.WriteLine("|      O : leeg karretje      |  Beweeg de splitsingen |");
+            Console.WriteLine("|      Ø : vol karretje       |  zodat de karretjes    |");
+            Console.WriteLine("|      . : rangeerterrein     |  op het schip gelost   |");
+            Console.WriteLine("|                             |  worden                |");
             Console.WriteLine("└──────────────────────────────────────────────────────┘");
         
             ConsoleKeyInfo input;
@@ -279,6 +290,26 @@ namespace Mod_3_assessment.Presentation
 
         }
 
+        public void drawGameOver(Map map)
+        {
+
+
+            Console.Clear();
+            Console.WriteLine("┌──────────────────────────────────────────────────────┐");
+            Console.WriteLine("  Helaas! 2 karretjes zijn gebotst, je score is: " +  map.Score + "     ");
+            Console.WriteLine("└──────────────────────────────────────────────────────┘");
+
+            ConsoleKeyInfo input;
+            Console.WriteLine();
+            Console.WriteLine("> press key to go back to the menu");
+            input = Console.ReadKey();
+
+
+
+
+
+
+        }
 
 
 

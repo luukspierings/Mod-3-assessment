@@ -24,18 +24,22 @@ namespace Mod_3_assessment.Process
 
         private int timeSpan = 1000;
 
+
+        private List<Cart> carts;
+
+
+
         public Controller()
         {
             _map = new Map();
+            carts = new List<Cart>();
             
             _inputview = new InputView();
             _outputview = new OutputView();
-            _outputview.drawMap(_map);
+            _outputview.drawMap(_map, 0);
             GameFinished = false;
 
-            _map.MineA.placeCart();
-            //_map.MineB.placeCart();
-            //_map.MineC.placeCart();
+           
 
 
             this.Start();
@@ -53,6 +57,11 @@ namespace Mod_3_assessment.Process
         {
             Stopwatch stopwatch = Stopwatch.StartNew();
 
+            Random random = new Random();
+            int timebeforemine = random.Next(1, 4);
+            int maxtime = 8;
+            int lvl = 0;
+
             while (!GameFinished)
             {
 
@@ -63,7 +72,7 @@ namespace Mod_3_assessment.Process
                 if(inputnumber != 0)
                 {
                     _map.changeSwitch(inputnumber);
-                    _outputview.drawMap(_map);
+                    _outputview.drawMap(_map, lvl);
                     inputnumber = 0;
                 }
                 
@@ -71,15 +80,66 @@ namespace Mod_3_assessment.Process
 
                 if (ts >= this.timeSpan)
                 {
-                   
-                    _outputview.drawMap(_map);
+                    _outputview.drawMap(_map, lvl);
                     this.render();
                     
+                    
+
+                    
+                    timebeforemine--;
+
+                    if (timebeforemine == 0)
+                    {
+                        switch (random.Next(0, 3))
+                        {
+                            case 0:
+                                _map.MineA.placeCart();
+                                break;
+                            case 1:
+                                _map.MineB.placeCart();
+                                break;
+                            case 2:
+                                _map.MineC.placeCart();
+                                break;
+
+                        }
+
+
+                        timebeforemine = random.Next(3, maxtime);
+                    }
+                    if(_map.Score > 9 && _map.Score < 20){
+                        maxtime = 7;
+                        lvl = 1;
+                    }
+                    else if (_map.Score > 20 && _map.Score < 30)
+                    {
+                        maxtime = 6;
+                        lvl = 2;
+                    }
+                    else if (_map.Score > 30 && _map.Score < 40)
+                    {
+                        maxtime = 5;
+                        lvl = 3;
+                    }
 
                     stopwatch.Restart();
                 }
 
             }
+
+
+            _outputview.drawGameOver(_map);
+            _outputview.drawMenu();
+            _map = new Map();
+            carts = new List<Cart>();
+            _outputview.drawMap(_map, 0);
+            GameFinished = false;
+            this.Start();
+
+
+
+
+
         }
 
 
@@ -94,10 +154,33 @@ namespace Mod_3_assessment.Process
 
             Boolean godown = true;
 
-            List<Cart> carts = new List<Cart>();
-
-
             Cart tempcart;
+
+
+            foreach (Cart c in carts)
+            {
+
+
+                if (c.Spot.GetType() != new Parking().GetType() && !c.Spot.cartMoveAble())
+                {
+                    GameFinished = true;
+                }
+
+                
+
+            }
+            foreach (Cart c in carts)
+            {
+
+
+                c.Moved = false;
+
+
+            }
+
+            carts = new List<Cart>();
+
+
 
 
             // C
@@ -120,10 +203,7 @@ namespace Mod_3_assessment.Process
 
             }
 
-            if (roadlast.Currentcart != null)
-            {
-                roadlast.Currentcart = null;
-            }
+            
 
             while (roadlast != null)
             {
@@ -365,12 +445,13 @@ namespace Mod_3_assessment.Process
 
 
 
-            foreach(Cart c in carts)
-            {
-                c.Moved = false;
-            }
+            
 
-                
+
+
+
+            _map.Score = _map.Score + _map.Ship.unload();
+
 
         }
 

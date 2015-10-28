@@ -9,7 +9,16 @@ namespace Mod_3_assessment.Domain
     class Parking: Road
     {
 
+        public String ToChar()
+        {
+            if (Currentcart != null)
+            {
+                return Currentcart.ToChar() + "";
+            }
 
+            return ".";
+
+        }
 
 
 

@@ -1,0 +1,979 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="7acf4ee1-63b5-48bf-8c3b-c384c4130e78"
+  name="Mod_3_assessment"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="2c70a76f-37d1-4683-b158-70c0d9333e40"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DMod_3_assessment"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="62e4e449-efba-4a14-8081-9f0f3c58afcb"
+        LastKnownName="Domain"
+        LastKnownLocation="Package1_1149.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="7d56d03a-8453-46b6-a23d-bd96f21a33c1"
+        LastKnownName="Process"
+        LastKnownLocation="Package3_1149.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="d95eae8f-7f02-4031-9175-5b862112c55d"
+        LastKnownName="Presentation"
+        LastKnownLocation="Package4_1149.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="2e037dff-2ba8-40d4-bade-1ca431f2a47d"
+        name="Direction"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="6c52246a-069a-4e5f-b7aa-b7731a0449c7"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fluuk%2FDocuments%2FGitHub%2FMod-3-assessment%2FMod-3-assessment%2FMod-3-assessment%2Fbin%2FDebug%2FMod-3-assessment.exe Namespace%3DMod_3_assessment Type%3DDirection"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="b2c75bda-0c4d-48f1-8596-965b47deaf05"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="362352a4-f4ff-4d90-9890-a52d465456ee">
+                <propertyInstance
+                  Id="297f8568-c3e5-41cc-b496-e95cae1ba1e1"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6cc8ff1d-5c55-4dcb-9ba4-63dccc5ceb61">
+                <propertyInstance
+                  Id="4aff3eb0-2b06-47f4-82e6-98081b99901e"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9d2c7fa6-3079-4e9a-90ee-009c50a6d974">
+                <propertyInstance
+                  Id="0d0072b0-6817-4453-ae95-17741db98a8c"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="d0dbf948-3393-4036-bdb4-f10d9d156285"
+            name="Down">
+            <referencesInternal>
+              <reference
+                Id="0515b364-485a-4607-ab8c-797ca164916e"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fluuk%2FDocuments%2FGitHub%2FMod-3-assessment%2FMod-3-assessment%2FMod-3-assessment%2Fbin%2FDebug%2FMod-3-assessment.exe Namespace%3DMod_3_assessment Type%3DDirection Member%3DDown"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="fa95ef4e-e97a-47c9-a7b0-2c212323b13d"
+            name="Right">
+            <referencesInternal>
+              <reference
+                Id="a0b6c15e-5c20-43c8-af2f-83c3de39861c"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fluuk%2FDocuments%2FGitHub%2FMod-3-assessment%2FMod-3-assessment%2FMod-3-assessment%2Fbin%2FDebug%2FMod-3-assessment.exe Namespace%3DMod_3_assessment Type%3DDirection Member%3DRight"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="4243a9e4-10c6-40f2-9c0f-c9ba1ef61793"
+            name="Up">
+            <referencesInternal>
+              <reference
+                Id="bc44db0d-0b6a-418c-a26f-6980161c3114"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fluuk%2FDocuments%2FGitHub%2FMod-3-assessment%2FMod-3-assessment%2FMod-3-assessment%2Fbin%2FDebug%2FMod-3-assessment.exe Namespace%3DMod_3_assessment Type%3DDirection Member%3DUp"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="67a125e7-8da1-4e33-8991-c63900d71345"
+        name="Program"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="4b9ad523-ff49-4c08-971f-3b6baef698cb"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fluuk%2FDocuments%2FGitHub%2FMod-3-assessment%2FMod-3-assessment%2FMod-3-assessment%2Fbin%2FDebug%2FMod-3-assessment.exe Namespace%3DMod_3_assessment Type%3DProgram"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="baa2f0fa-2144-456e-9b8e-87fd796184b9"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="08183d91-bc2a-4bfd-a0b3-b9368a0f5827">
+                <propertyInstance
+                  Id="8109e638-af54-4dc6-be75-871b32775c1b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c1ec7917-ad30-443c-93d9-3d83e23f7db9">
+                <propertyInstance
+                  Id="8b6d068f-ca17-41d6-910a-2937146ee295"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d52dbb49-26ce-4463-bd18-a167e3a706d2">
+                <propertyInstance
+                  Id="aef084fb-18ba-4d40-85a0-2e3e27724eb9"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f7e5a176-805d-481a-a990-12aad7daf7c3">
+                <propertyInstance
+                  Id="062936e1-e0c7-4064-bd34-00719dc951f7"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="42d583ee-1d91-41f7-811b-e09f927e6e13">
+                <propertyInstance
+                  Id="a747298f-b8ab-4d56-a5db-f7cc60458e0a"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="d6430101-85b3-4c18-840f-eb11a7deebe8"
+            name="Program"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="ecb445b9-7942-484c-9fb4-0adf75a74949"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fluuk%2FDocuments%2FGitHub%2FMod-3-assessment%2FMod-3-assessment%2FMod-3-assessment%2Fbin%2FDebug%2FMod-3-assessment.exe Namespace%3DMod_3_assessment Type%3DProgram Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d9b86252-2930-4450-952d-d35df10ec153"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f4b055cf-2b5f-4b0c-a6a1-deb76a5bc479">
+                    <propertyInstance
+                      Id="992ee2f7-f7af-490f-8fd3-89731a41158c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="53d6a5d6-2c6d-4f99-a3b8-41a52ab1cd95">
+                    <propertyInstance
+                      Id="fe269fad-a44c-4173-9623-cf9fdc3dfb93"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7addaf7c-0577-494d-bff2-1e29dccd10e4">
+                    <propertyInstance
+                      Id="7ecb8a05-5c4a-48ad-8a36-eea148bd7042"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e7223347-7b2c-4cb8-9218-0dbbc2d56020">
+                    <propertyInstance
+                      Id="66dcd2b2-8075-4ea3-aac0-73b71816ba97"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ee372d1c-775b-4db6-8490-39010a601587">
+                    <propertyInstance
+                      Id="bfb7866d-3ea3-407d-a72d-27c567755d92"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b7844397-e8e5-404e-9697-6ae034ad734c">
+                    <propertyInstance
+                      Id="832268ec-ed5a-4164-b6c4-a2ead2423561"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="116bb7fc-605d-490e-9592-7d7a812da449"
+            name="Main"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="03e15094-adcc-4bf5-9c30-7d064e8d4642"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fluuk%2FDocuments%2FGitHub%2FMod-3-assessment%2FMod-3-assessment%2FMod-3-assessment%2Fbin%2FDebug%2FMod-3-assessment.exe Namespace%3DMod_3_assessment Type%3DProgram Member%3D(Name%3DMain OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3D(Name%3DString ArrayRank%3D1 ParentType%3DString))])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="0661a680-d3c1-43a2-b5d7-91dd88059314"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b3fa6269-dae3-4e86-b886-daa270946a8f">
+                    <propertyInstance
+                      Id="f38321ca-c77f-4771-a083-51fa9ad7adc8"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fe184b1e-6b86-4273-9025-9c104c160be6">
+                    <propertyInstance
+                      Id="e875b623-8dbf-4dd7-9c06-fdd1460e2065"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="70176bde-5f5d-4fdd-94fb-800ea45f7d09">
+                    <propertyInstance
+                      Id="e9043511-e587-4882-93e9-5fdf9dd97fd3"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d3902a12-f7f9-42c5-b2a9-f4470f82d5c0">
+                    <propertyInstance
+                      Id="81c38a60-b268-4ad3-ad40-dfdd4b6ff732"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2cce71bf-018a-4f88-8608-a298732dc426">
+                    <propertyInstance
+                      Id="de76b30c-a35d-433c-a450-2a8483ee0cee"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f9ae2053-fcb3-441d-b2cf-051feca8ab80">
+                    <propertyInstance
+                      Id="12129d81-83f4-4842-bf89-79801a00790c"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="44ea8ac6-44e1-4f98-828f-4f47ecf146e2"
+                  name="args"
+                  direction="In"
+                  isOrdered="true">
+                  <referencesInternal>
+                    <reference
+                      Id="ec52a58e-c800-4cec-9d0a-c0a095f26b79"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fluuk%2FDocuments%2FGitHub%2FMod-3-assessment%2FMod-3-assessment%2FMod-3-assessment%2Fbin%2FDebug%2FMod-3-assessment.exe Namespace%3DMod_3_assessment Type%3DProgram Member%3D(Name%3DMain OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3D(Name%3DString ArrayRank%3D1 ParentType%3DString))]) ParameterIdentifier%3Dargs"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <lowerValueInternal>
+                    <literalString
+                      Id="aa0bc204-7d0a-4ad7-b773-8d3be74fa8be"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="60d87605-9631-442b-b8c7-1685b711599e"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b09dfbd2-377e-4a63-9341-56964edcdf74"
+        name="SwitchSplit"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="1be8646d-9713-4e31-9780-7cb67c9f5fa4"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fluuk%2FDocuments%2FGitHub%2FMod-3-assessment%2FMod-3-assessment%2FMod-3-assessment%2Fbin%2FDebug%2FMod-3-assessment.exe Namespace%3DMod_3_assessment Type%3DSwitchSplit"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="3b532909-aa7e-45f8-af9b-556a577f42eb"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="73d13f5c-9533-4ee4-80f1-1d5bc7d8cbf0">
+                <propertyInstance
+                  Id="d040c084-db95-4a44-8e9e-26f4ef28649f"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f6012d22-f375-4b0a-8cac-a1ffcf81d4eb">
+                <propertyInstance
+                  Id="0045a02e-d80d-47ba-b48a-fbeefdf76d02"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6c85b3fd-da81-4b12-bfef-adabe03e3531">
+                <propertyInstance
+                  Id="ba2a4a72-7cf8-4735-a6dc-92dbcc439a1f"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b92c83b0-c9b2-40a4-b7aa-0e4bf909f740">
+                <propertyInstance
+                  Id="951ca8c2-bd6f-4399-8b06-15211102c078"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="45127326-a001-4144-8235-f4a67a551132">
+                <propertyInstance
+                  Id="ffd1da47-fed0-4058-a575-2f7f79f8c1a3"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="8fd98b60-371f-4440-a036-eae386463a4d"
+            isSubstitutable="false">
+            <classMoniker
+              Id="367ddb7e-6493-4c77-b2fd-456a4273c29e"
+              LastKnownName="Road"
+              LastKnownLocation="Package1_1149.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="c6d9a071-ee25-4d4a-8e87-5be2b674adc6"
+            isDerived="false"
+            sourceEndRoleName="SwitchSplit"
+            targetEndRoleName="RoadDown"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="367ddb7e-6493-4c77-b2fd-456a4273c29e"
+              LastKnownName="Road"
+              LastKnownLocation="Package1_1149.uml" />
+            <description>Property RoadDown references type Road.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7aedab25-1fcc-4ebd-b012-844f4d907a28"
+                  name="SwitchSplit"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="8825ac17-2a8b-430e-8334-a9f5d806d1cc"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="7082113b-b104-4860-bde4-eb9534ead885"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="71eea8d6-51ff-49fb-a711-0a9523118b51"
+                  name="RoadDown"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="18c968fb-2222-469e-838d-b9287f0f185f"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="4bff2439-c633-4a1d-a329-3e481cc4c8a8"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="03f21ebb-ee27-4c53-8251-075ad4f9af00"
+            isDerived="false"
+            sourceEndRoleName="SwitchSplit"
+            targetEndRoleName="RoadUp"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="367ddb7e-6493-4c77-b2fd-456a4273c29e"
+              LastKnownName="Road"
+              LastKnownLocation="Package1_1149.uml" />
+            <description>Property RoadUp references type Road.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fbfb1079-874c-4c90-a669-7221c05dd677"
+                  name="SwitchSplit"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="186c47fe-c97f-41dc-89f2-5c3d3d4fdeee"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="ef581b61-2947-4098-acb9-05d66d24af87"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4f5520e3-e176-421d-80e3-ff262afc3745"
+                  name="RoadUp"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="477793dc-cea5-4a5a-b183-7cb653d0d916"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="6746cbfd-8dfb-450b-a194-d7e42d5bbfd4"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="2be0f47f-2fa0-4ac1-ba24-02b82ed7fd8f"
+            name="RoadDown"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="cf2dfcb5-3a4f-4498-b37a-e36a80188194"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fluuk%2FDocuments%2FGitHub%2FMod-3-assessment%2FMod-3-assessment%2FMod-3-assessment%2Fbin%2FDebug%2FMod-3-assessment.exe Namespace%3DMod_3_assessment Type%3DSwitchSplit Member%3DRoadDown"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a66fbf90-d563-46ad-8158-6493ca6f6a5b"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cbfee44c-870f-4ac8-8504-5755722b3e89">
+                    <propertyInstance
+                      Id="3d6e18b0-f18b-41c0-b58e-73ada14d526c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1363c93c-74da-4210-8a83-f1ed4a0eb597">
+                    <propertyInstance
+                      Id="49b2484a-8b25-426b-9824-eb0a81a2dc7d"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2ac4b0d6-2be8-4b08-871e-d8b7766078f3">
+                    <propertyInstance
+                      Id="9a562b4d-08ea-4c8f-a78f-d7af8b4c0395"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b4590b00-f9bf-484e-8745-087b7576544e">
+                    <propertyInstance
+                      Id="7a52d4e2-fc8b-4902-9c00-f911be661fc5"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="53eb76e5-7c70-43f3-aa1d-dc4a18c9ecd9">
+                    <propertyInstance
+                      Id="d752a0da-b3b0-40b8-b323-a24ccf2427c8"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5d288a6e-f4c8-4218-ae47-938036044b36">
+                    <propertyInstance
+                      Id="9f9b1f93-c091-4ca2-98b9-08af7f398791"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="74b02e63-9a8c-416f-9f46-87b9d464d801">
+                    <propertyInstance
+                      Id="444525b5-4e3d-495d-a0ad-c4fdf34ad4fb"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="367ddb7e-6493-4c77-b2fd-456a4273c29e"
+                LastKnownName="Road"
+                LastKnownLocation="Package1_1149.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="5dd183f8-afe3-4563-b209-695553823243"
+            name="RoadUp"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="e54858d6-96d5-4478-981b-0204441408b4"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fluuk%2FDocuments%2FGitHub%2FMod-3-assessment%2FMod-3-assessment%2FMod-3-assessment%2Fbin%2FDebug%2FMod-3-assessment.exe Namespace%3DMod_3_assessment Type%3DSwitchSplit Member%3DRoadUp"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="73c09328-3de7-4d9a-97df-699a017f7413"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="942472e0-d176-4d18-86f2-4fceb6b0bc60">
+                    <propertyInstance
+                      Id="6fc8ca43-4771-4691-8515-c1f1e45c36c4"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="be46a860-1bc5-42ac-94d3-134cfb6a71fd">
+                    <propertyInstance
+                      Id="4021c439-1b21-4d98-88f0-051b8e169e1a"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dfc42402-792d-443c-ba14-553fdab46498">
+                    <propertyInstance
+                      Id="5b95797c-efbf-4b8b-8c69-19c9a44f04e1"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ee741951-0f7a-47ae-af8b-c23faf153518">
+                    <propertyInstance
+                      Id="5911456a-2469-4d4d-a7ca-c0446cadce52"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e40b17e8-f120-40cf-8ac7-0566a0a3c5e8">
+                    <propertyInstance
+                      Id="1fd99f44-7aae-4f8e-afaf-c6c7f9419e4c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="46dcb5d1-0fa3-467a-b5bf-3d557b12d453">
+                    <propertyInstance
+                      Id="faef8c90-1590-4d52-90d6-68ca12c004a1"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="34831cee-0664-456f-ba5c-353d515062ea">
+                    <propertyInstance
+                      Id="58a230cf-6726-4019-ab56-196f99dbff18"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="367ddb7e-6493-4c77-b2fd-456a4273c29e"
+                LastKnownName="Road"
+                LastKnownLocation="Package1_1149.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="286dbb96-d9d5-4c87-a6e5-11315efcb4d9"
+            name="_roaddown"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="0f304d41-e977-44c3-9104-17a79990e2a2"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fluuk%2FDocuments%2FGitHub%2FMod-3-assessment%2FMod-3-assessment%2FMod-3-assessment%2Fbin%2FDebug%2FMod-3-assessment.exe Namespace%3DMod_3_assessment Type%3DSwitchSplit Member%3D_roaddown"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f790b1e3-514b-4bd6-9702-19c101ba36ce"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="12bc0b85-a2f7-429e-88b1-e9e863dee094">
+                    <propertyInstance
+                      Id="fd30c810-7f7b-4f38-8764-3f2bfdeb8482"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0440275d-7afd-4342-908d-7c34b7e1e410">
+                    <propertyInstance
+                      Id="f6f6a450-0749-412c-9a7e-73e5f161aba6"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="710a6c3c-d1cb-47f7-b999-beb31467b0d9">
+                    <propertyInstance
+                      Id="481ecea1-babe-4b82-a5ff-7d98950cc522"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6c01cabb-d665-4fdb-aa70-f03e8afedb45">
+                    <propertyInstance
+                      Id="3c746fd3-77bf-4be3-ac5a-cb0f48008757"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d1866379-f651-4d2e-a6ea-43389759b163">
+                    <propertyInstance
+                      Id="979054b6-993c-4b03-be96-24930c1e62da"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="367ddb7e-6493-4c77-b2fd-456a4273c29e"
+                LastKnownName="Road"
+                LastKnownLocation="Package1_1149.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a75c3ba9-ed09-4bac-84fe-b1e54a32444c"
+            name="_roadup"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="02d26d3c-8045-407a-b808-d5877a59dac1"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fluuk%2FDocuments%2FGitHub%2FMod-3-assessment%2FMod-3-assessment%2FMod-3-assessment%2Fbin%2FDebug%2FMod-3-assessment.exe Namespace%3DMod_3_assessment Type%3DSwitchSplit Member%3D_roadup"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8042a03b-b199-412a-b062-ec27814fe9d4"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0c044fa4-be3f-4295-8d32-18d2f08ed39b">
+                    <propertyInstance
+                      Id="756f36bd-6008-44dd-b155-566006b3c96b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3080c606-e6c7-49ff-918a-34528d456e86">
+                    <propertyInstance
+                      Id="e72afb6f-29d8-4188-941f-5159d195ed04"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="011b3ad3-8daf-438d-820f-c4887eff2aab">
+                    <propertyInstance
+                      Id="b5a2081b-200a-4984-a0d2-3f58efc9cfe0"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="899b2916-a15a-4c3c-8e2d-bcf5c98502e4">
+                    <propertyInstance
+                      Id="e0864901-c321-4c72-8ee3-8a01504547ba"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="21382e70-dba4-4719-98ea-677947a3078e">
+                    <propertyInstance
+                      Id="a3d452b1-7288-4864-bba5-c9b22698200b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="367ddb7e-6493-4c77-b2fd-456a4273c29e"
+                LastKnownName="Road"
+                LastKnownLocation="Package1_1149.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="aaed2293-e3b9-4057-abed-89a33ba8b9c0"
+            name="SwitchSplit"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="01274053-4d9b-4969-a53f-c07e8aa8a803"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fluuk%2FDocuments%2FGitHub%2FMod-3-assessment%2FMod-3-assessment%2FMod-3-assessment%2Fbin%2FDebug%2FMod-3-assessment.exe Namespace%3DMod_3_assessment Type%3DSwitchSplit Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1385b943-048a-4d0e-9ce2-ed683c77cc8d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cf9d959d-e614-40be-95e7-7d785bc65908">
+                    <propertyInstance
+                      Id="b61403df-881d-4d00-8b76-9065b963d37e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="46c78627-a9c6-4aba-91de-90ac9421849c">
+                    <propertyInstance
+                      Id="e02ef960-6f35-4c6a-9ce8-6e231abdf8f1"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="554843c0-85ce-4c31-a73e-e8c7eabb21b6">
+                    <propertyInstance
+                      Id="193ca970-1867-478d-b857-2d49540c0a3f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="97d68172-73cc-44f0-b59f-4a9ec3512e98">
+                    <propertyInstance
+                      Id="51303d17-7cba-4548-a117-33365db6e2f4"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5e88e9ba-b0dd-4ec2-827e-16026bada0d5">
+                    <propertyInstance
+                      Id="eea11d11-7efc-4116-859b-1aaefcfeec38"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f735851c-dba0-43ec-91ef-9c552f213ad5">
+                    <propertyInstance
+                      Id="bc306a50-72ef-4917-abef-a6f0b8fc236f"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="5801589e-f946-4086-8460-82db11cfa783"
+            name="renderCart"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="5cd24abe-1103-49e3-aa03-d43b8ce92e33"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fluuk%2FDocuments%2FGitHub%2FMod-3-assessment%2FMod-3-assessment%2FMod-3-assessment%2Fbin%2FDebug%2FMod-3-assessment.exe Namespace%3DMod_3_assessment Type%3DSwitchSplit Member%3DrenderCart"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3b0126e6-12b7-4577-b55f-99d86ceb0bb9"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dc09e4e4-fa02-462f-9147-7be2cc5a3689">
+                    <propertyInstance
+                      Id="bb2cdbf4-5a42-4b91-8eea-bfbe037eb57b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8315ec86-e113-473a-be15-a80b42cc8a7b">
+                    <propertyInstance
+                      Id="a28fad71-e099-481e-a4a2-c0669aa8cb27"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="95bf25b9-dc23-44be-9377-4b735c8b8d88">
+                    <propertyInstance
+                      Id="6c888107-3965-4761-8f79-e1b598a15521"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6f8db7a2-c64e-4456-b448-61570ef76913">
+                    <propertyInstance
+                      Id="23ca05ec-b13c-4f11-a601-cd369d3cd27a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8f2f516d-7c31-4ee8-b077-e4e80b2587fd">
+                    <propertyInstance
+                      Id="4cea97fd-0443-4d80-910b-5ff0d5489298"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ae7336e3-c949-427e-bba3-450f87230d62">
+                    <propertyInstance
+                      Id="e358fed1-ecd5-4414-9988-c243cbd01865"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6db2ac18-6a01-4c0e-ab6d-273189ae09da"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

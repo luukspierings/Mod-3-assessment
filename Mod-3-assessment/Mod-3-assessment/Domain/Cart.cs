@@ -11,6 +11,7 @@ namespace Mod_3_assessment.Domain
 
         private Boolean _isempty;
         private Boolean _moved;
+        private Road _spot;
 
 
 
@@ -23,6 +24,11 @@ namespace Mod_3_assessment.Domain
         {
             get { return _moved; }
             set { _moved = value; }
+        }
+        public Road Spot
+        {
+            get { return _spot; }
+            set { _spot = value; }
         }
 
 

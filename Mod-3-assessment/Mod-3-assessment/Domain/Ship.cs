@@ -48,6 +48,28 @@ namespace Mod_3_assessment.Domain
         }
 
 
+        public int unload()
+        {
+            if (_dock.Currentcart != null)
+            {
+                _dock.Currentcart.Isempty = true;
+                
+                Cargo = Cargo + 1;
+                if (Cargo == 8)
+                {
+                    Cargo = 0;
+                    return 11;
+                }
+                return 1;
+            }
+
+
+            return 0;
+
+        }
+
+
+
 
     }
 }

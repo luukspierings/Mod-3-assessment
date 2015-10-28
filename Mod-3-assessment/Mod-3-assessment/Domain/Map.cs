@@ -15,10 +15,15 @@ namespace Mod_3_assessment.Domain
 
         private Ship _ship;
 
+        private int _score;
+
+
         public Map()
         {
 
             _ship = new Ship();
+            _score = 0;
+
 
             buildMap();
 
@@ -101,6 +106,24 @@ namespace Mod_3_assessment.Domain
             BCsplit.RoadDown.Previous = BCsplit;
             
             C = buildRoad(6, BCsplit.RoadDown);
+
+            for (int i = 0; i < 8; i++)
+            {
+                Parking temp = new Parking();
+
+                C.Next = temp;
+                temp.Previous = C;
+
+                C = temp;
+
+
+
+            }
+
+           
+
+
+
 
 
 
@@ -241,7 +264,11 @@ namespace Mod_3_assessment.Domain
             get { return _mineC; }
             set { _mineC = value; }
         }
-
+        public int Score
+        {
+            get { return _score; }
+            set { _score = value; }
+        }
 
     }
 }

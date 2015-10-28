@@ -33,6 +33,7 @@ namespace Mod_3_assessment
             if (Currentcart != null && Direction == Direction.Up && RoadUp.Currentcart == null && !Currentcart.Moved)
             {
                 Currentcart.Moved = true;
+                Currentcart.Spot = RoadUp;
                 RoadUp.Currentcart = Currentcart;
                 
                 Currentcart = null;
@@ -44,6 +45,7 @@ namespace Mod_3_assessment
             else if (Currentcart != null && Direction == Direction.Down && RoadDown.Currentcart == null && !Currentcart.Moved)
             {
                 Currentcart.Moved = true;
+                Currentcart.Spot = RoadDown;
                 RoadDown.Currentcart = Currentcart;
                 
                 Currentcart = null;

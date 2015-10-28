@@ -93,6 +93,7 @@ namespace Mod_3_assessment.Domain
             
             if (Next != null && Currentcart != null && Next.Currentcart == null && !Currentcart.Moved)
             {
+                Currentcart.Spot = Next;
                 Next.Currentcart = Currentcart;
                 Currentcart.Moved = true;
                 Currentcart = null;
@@ -101,6 +102,10 @@ namespace Mod_3_assessment.Domain
                 return true;
                 
 
+            }
+            else if (Currentcart != null && !Currentcart.Moved)
+            {
+                return true;
             }
             else
             {
@@ -113,7 +118,20 @@ namespace Mod_3_assessment.Domain
 
 
         }
-        
+
+
+        public Boolean cartMoveAble()
+        {
+            if (Next != null && Currentcart != null && Next.Currentcart != null && !Currentcart.Moved && !Next.Currentcart.Moved)
+            {
+                return false;
+            }
+
+
+
+            return true;
+        }
+
 
 
     }
